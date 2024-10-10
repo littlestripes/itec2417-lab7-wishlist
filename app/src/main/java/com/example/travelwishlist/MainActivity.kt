@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), OnListItemClickedListener, OnDataChang
     private lateinit var newPlaceEditText: EditText
     private lateinit var addNewPlaceButton: Button
     private lateinit var placeListRecyclerView: RecyclerView
+    private lateinit var newPlaceReasonEditText: EditText
 
     private lateinit var placesRecyclerAdapter: PlaceRecyclerAdapter
 
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity(), OnListItemClickedListener, OnDataChang
         placeListRecyclerView = findViewById(R.id.place_list)
         newPlaceEditText = findViewById(R.id.new_place_name)
         addNewPlaceButton = findViewById(R.id.add_new_place_button)
+        newPlaceReasonEditText = findViewById(R.id.new_place_reason)
 
         val places = placesListModel.getPlaces()
 
@@ -62,11 +64,16 @@ class MainActivity : AppCompatActivity(), OnListItemClickedListener, OnDataChang
 
     private fun addNewPlace() {
         val placeName = newPlaceEditText.text.toString()
+        val placeReason = newPlaceReasonEditText.text.toString()
         val name = placeName.trim()
+        val reason = placeReason.trim()
+
         if (name.isEmpty()) {
             Toast.makeText(this, "Enter a place name", Toast.LENGTH_SHORT).show()
+        } else if (reason.isEmpty()) {
+            Toast.makeText(this, "Enter a reason", Toast.LENGTH_SHORT).show()
         } else {
-            val place = Place(name)
+            val place = Place(name, reason)
             val positionAdded = placesListModel.addNewPlace(place)
             if (positionAdded == -1) {
                 Toast.makeText(this, "You already added that place", Toast.LENGTH_SHORT).show()
@@ -80,6 +87,7 @@ class MainActivity : AppCompatActivity(), OnListItemClickedListener, OnDataChang
 
     private fun clearForm() {
         newPlaceEditText.text.clear()
+        newPlaceReasonEditText.text.clear()
     }
 
     private fun hideKeyboard() {

@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 const val TAG="PLACES_VIEW_MODEL"
 
 class PlacesViewModel : ViewModel() {
-    private val places = mutableListOf<Place>(Place("Rio de Janeiro"), Place("Queen Maud Land"), Place("Lake Baikal"))
+    private val places = mutableListOf<Place>(Place("Rio de Janeiro", "Very cool"), Place("Queen Maud Land", "VERY cool"), Place("Lake Baikal", "wow"))
 
     fun getPlaces(): List<Place> {
         return places  // Kotlin will convert mutable list to list

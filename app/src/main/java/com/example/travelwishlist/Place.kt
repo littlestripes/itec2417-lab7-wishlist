@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-data class Place(val name: String, val dateAdded: Date = Date()) {
+data class Place(val name: String, val reason: String, val dateAdded: Date = Date()) {
     fun formattedDate(): String {
         /** Return date as a formatted string.
          *  Example: "Wed, 4 July 2001" */
