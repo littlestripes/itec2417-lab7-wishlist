@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Travel Wishlist</string>
+    <string name="app_name">Travel Wishlist DB</string>
     <string name="new_place_name_hint">Where do you want to go?</string>
     <string name="add">Add</string>
     <string name="place_name">Place Name</string>

@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Travel Wishlist"
+rootProject.name = "Travel Wishlist DB"
 include(":app")
  

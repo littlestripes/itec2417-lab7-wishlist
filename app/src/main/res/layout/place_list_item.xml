@@ -10,58 +10,55 @@
     app:cardCornerRadius="@dimen/card_corner_radius"
     app:cardElevation="@dimen/card_elevation">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/place_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_spacing"
-        android:padding="@dimen/medium_spacing"
-        android:text="@string/place_name"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/large_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/place_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_spacing"
+            android:layout_marginEnd="84dp"
+            android:padding="@dimen/medium_spacing"
+            android:text="@string/place_name"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/large_text_size"
+            app:layout_constraintEnd_toStartOf="@+id/map_icon"
+            app:layout_constraintStart_toEndOf="@+id/star_check"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/map_icon"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_margin="@dimen/extra_large_spacing"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_directions" />
+        <ImageView
+            android:id="@+id/map_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="@dimen/extra_large_spacing"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_menu_directions" />
 
-    <TextView
-        android:id="@+id/date_place_added"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_spacing"
-        android:padding="@dimen/medium_spacing"
-        android:textAlignment="viewStart"
-        android:textSize="@dimen/medium_text_size"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/map_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="Date added" />
+        <TextView
+            android:id="@+id/place_reason"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_spacing"
+            android:padding="@dimen/medium_spacing"
+            app:layout_constraintEnd_toStartOf="@+id/map_icon"
+            app:layout_constraintStart_toEndOf="@+id/star_check"
+            app:layout_constraintTop_toBottomOf="@+id/place_name"
+            tools:text="Reason" />
 
-    <TextView
-        android:id="@+id/place_reason"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/small_spacing"
-        android:padding="@dimen/medium_spacing"
-        app:layout_constraintBottom_toTopOf="@+id/date_place_added"
-        app:layout_constraintEnd_toStartOf="@+id/map_icon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/place_name"
-        tools:text="Reason" />
+        <CheckBox
+            android:id="@+id/star_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_spacing"
+            android:layout_marginStart="16dp"
+            android:button="@drawable/star_check_icons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
